@@ -19,7 +19,7 @@
         update_cache: yes
         name:
           - nano
-          - micro
+          - neovim
           - git
           - curl
           - wget
