@@ -19,7 +19,6 @@
         update_cache: yes
         name:
           - nano
-          - neovim
           - git
           - curl
           - wget
@@ -30,7 +29,6 @@
           - unarchiver
           - duf
           - ncdu
-          - btop
           - iotop
           - glances
           - nmap
@@ -75,6 +73,68 @@
       file:
         path: /etc/sudoers.d/temp_allow_no_pswd_pacman
         state: absent
+        
+# PARU TO ACCESS AUR REPOSITORY  ---------------------------------------------
+
+    - name: install paru
+      yay:
+        update_cache: yes
+        name:
+          - paru
+          
+    - name: install bunch of packages
+      paru:
+        update_cache: yes
+        name:
+          - librewolf
+          - firefox
+          - mullvad-vpn
+          - firewalld
+          - apparmor
+          - firejail
+          - firetools
+          - pipewire
+          - pipewire-pulse
+          - pipewire-alsa
+          - pipewire-jack
+          - wireplumber
+          - neovim
+          - fzf
+          - ulauncher
+          - ranger
+          - atool
+          - trash-cli
+          - btrfs-assistant-git
+          - grub-btrfs
+          - snapper
+          - snapper-support
+          - snap-pac
+          - rebuild-detector
+          - bitwarden
+          - alacritty
+          - pasystray
+          - signal-desktop
+          - element-desktop
+          - spotify
+          - spotifywm-git
+          - spotify-adblock-git
+          - playerctl
+          - steam
+          - steam-native-runtime
+          - gamemode
+          - lib32-gamemode
+          - btop
+          - teamspeak
+          - stremio
+          - freetube
+          - gthumb
+          - qimgv-git
+          - kdeconnect
+          - pcloud-drive
+          - ungoogled-chromium
+          - termdown
+          - tldr
+          - wttr
 
 # SYSTEM SETTINGS CHANGES ----------------------------------------------------
 
@@ -84,11 +144,11 @@
         regexp: '^#Color$'
         line: 'Color'
 
-    - name: pacman - enable ParallelDownloads = 5
+    - name: pacman - enable ParallelDownloads = 10
       lineinfile:
         path: /etc/pacman.conf
         regexp: '#ParallelDownloads = 5'
-        line: 'ParallelDownloads = 5'
+        line: 'ParallelDownloads = 10'
 
     - name: makepkg - disable compression
       lineinfile:
