@@ -367,12 +367,12 @@
         dest: ~/.config
         mode: 0644
 
-    - name: set default editor in .bashrc
+    - name: set default editor in .zshrc
       become: no
       blockinfile:
-        path: ~/.bashrc
+        path: ~/.zshrc
         block: |
-          export EDITOR=micro
-          export VISUAL=micro
+          export EDITOR=nvim
+          export VISUAL=nvim
 
 #  ---------------------------------------------------------------------------
