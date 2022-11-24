@@ -246,7 +246,7 @@
         content: |
           --save /etc/pacman.d/mirrorlist
           --protocol http
-          --country DE
+          --country CH,DE
           --score 20
           --sort rate
 
