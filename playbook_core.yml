@@ -30,7 +30,7 @@
           - unarchiver
           - duf
           - ncdu
-          - htop
+          - btop
           - iotop
           - glances
           - nmap
@@ -246,7 +246,7 @@
         content: |
           --save /etc/pacman.d/mirrorlist
           --protocol http
-          --country SK,CZ
+          --country DE
           --score 20
           --sort rate
 
